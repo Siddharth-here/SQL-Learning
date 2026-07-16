@@ -14,4 +14,4 @@ CREATE TABLE students (
 );
 
 --add a column
-ALTER TABLE students ADD COLUMN batch_name VARCHAR (50) DEFAULT 'WEB DEV 2026';
+ALTER TABLE students ADD COLUMN batch_name VARCHAR (50) DEFAULT 'WEB DEV 2026 cohort';
