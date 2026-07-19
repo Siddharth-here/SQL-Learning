@@ -185,3 +185,6 @@ SELECT name, nickname, auction_price_corores, (auction_price_corores * 2 ) AS ne
 -- How you can get distinct values
 
 SELECT distinct role FROM ipl_players 
+
+--Data Query Language(DQL)
+
