@@ -165,3 +165,14 @@ FROM ipl_players
 ORDER BY auction_price_corores DESC;
 
 SELECT team, nickname, auction_price_corores FROM ipl_players ORDER BY team ASC, auction_price_corores DESC
+
+--PAGINATION
+SELECT name, nickname, auction_price_corores FROM ipl_players ORDER BY auction_price_corores DESC LIMIT 3;
+
+SELECT name, nickname, auction_price_corores FROM ipl_players ORDER BY auction_price_corores DESC LIMIT 3 OFFSET 3; --How many rows i want to skip 
+
+page 1: (1-1) * 15 = 0 --offset
+page 1: (2-1) * 15 = 15 --offset
+page 1: (3-1) * 15 = 30 --offset
+page 1: (4-1) * 15 = 45 --offset
+
