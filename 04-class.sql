@@ -6,6 +6,8 @@ CREATE TABLE smart_watch_sales(
     price_per_unit DECIMAL(10,2),
     sale_date DATE
 )
+ALTER TABLE smart_watch_sales
+ADD COLUMN city VARCHAR(100);
 
 INSERT INTO smart_watch_sales (brand, model, units_sold, price_per_unit, sale_date) VALUES
 ('Apple',     'Watch Series 9',     120,  599.00, '2025-11-01'),
@@ -24,6 +26,24 @@ INSERT INTO smart_watch_sales (brand, model, units_sold, price_per_unit, sale_da
 ('Xiaomi',    'Band 8 Pro',         150,   69.99, '2025-11-14'),
 ('Amazfit',   'Balance',             35,  229.99, '2025-11-15');
 
+UPDATE smart_watch_sales SET city = CASE sale_id
+    WHEN 1  THEN 'Mumbai'
+    WHEN 2  THEN 'Delhi'
+    WHEN 3  THEN 'Bangalore'
+    WHEN 4  THEN 'Hyderabad'
+    WHEN 5  THEN 'Chennai'
+    WHEN 6  THEN 'Kolkata'
+    WHEN 7  THEN 'Pune'
+    WHEN 8  THEN 'Ahmedabad'
+    WHEN 9  THEN 'Jaipur'
+    WHEN 10 THEN 'Lucknow'
+    WHEN 11 THEN 'Surat'
+    WHEN 12 THEN 'Bhopal'
+    WHEN 13 THEN 'Chandigarh'
+    WHEN 14 THEN 'Indore'
+    WHEN 15 THEN 'Coimbatore'
+END;
+
 
 SELECT COUNT(*) as total_rows FROM smart_watch_sales;
 
@@ -37,3 +57,11 @@ SELECT MAX (price_per_unit) AS costly FROM smart_watch_sales
 
 
 SELECT * FROM smart_watch_sales
+
+--  Group by
+
+SELECT brand, SUM(units_sold) AS total_unit_sold FROM smart_watch_sales GROUP BY brand
+
+SELECT city, SUM(units_sold * price_per_unit) as city_revenue FROM smart_watch_sales GROUP BY city ORDER BY city_revenue DESC
+
+SELECT city, brand, SUM(units_sold) AS units FROM smart_watch_sales GROUP BY city, brand
