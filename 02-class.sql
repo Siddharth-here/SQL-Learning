@@ -181,3 +181,7 @@ page 1: (4-1) * 15 = 45 --offset
 SELECT name, nickname, auction_price_corores, (auction_price_corores * 100) AS price_in_lakhs FROM ipl_players
 
 SELECT name, nickname, auction_price_corores, (auction_price_corores * 2 ) AS new_price FROM ipl_players
+
+-- How you can get distinct values
+
+SELECT distinct role FROM ipl_players 
