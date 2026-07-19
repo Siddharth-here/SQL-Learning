@@ -40,3 +40,17 @@ SELECT * FROM ipl_players WHERE wickets_taken > 10 AND role = 'All-rounder'
 --OR
 SELECT * FROM ipl_players WHERE team = 'Chennai Super Kings' OR team = 'Royal Challengers Bangalore' ;
 
+
+-- Pattern Matching
+SELECT * FROM ipl_players WHERE name LIKE '_a%';
+
+-- not case sensitive
+SELECT * FROM ipl_players WHERE name ILIKE '_A%';
+
+--IN array
+SELECT * FROM ipl_players WHERE team IN ('Punjab Kings','Mumbai Indians', 'Chennai Super Kings' );
+
+-- BETWEEN
+SELECT * FROM ipl_players WHERE auction_price_corores BETWEEN 10 AND 15
+
+SELECT * FROM ipl_players WHERE team <> 'Chennai Super Kings';
