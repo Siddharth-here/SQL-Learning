@@ -31,3 +31,12 @@ SELECT name, nickname, team FROM ipl_players;
 SELECT * FROM ipl_players WHERE team = 'Mumbai Indians';
 
 SELECT name, nickname, auction_price_corores FROM ipl_players WHERE auction_price_corores > 10;
+
+-- Logical operators (AND, OR)
+
+-- AND
+SELECT * FROM ipl_players WHERE wickets_taken > 10 AND role = 'All-rounder'
+
+--OR
+SELECT * FROM ipl_players WHERE team = 'Chennai Super Kings' OR team = 'Royal Challengers Bangalore' ;
+
