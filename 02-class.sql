@@ -10,3 +10,24 @@ CREATE TABLE ipl_players (
 
 ALTER TABLE ipl_players ADD COLUMN IF NOT EXISTS nickname VARCHAR(50);
 
+INSERT INTO ipl_players (name, team, role, runs_scored, wickets_taken, auction_price_corores, nickname) VALUES
+('Virat Kohli', 'Royal Challengers Bangalore', 'Batsman', 8000, 4, 15, 'King Kohli'),
+('MS Dhoni', 'Chennai Super Kings', 'Wicketkeeper Batsman', 5000, 1, 12, 'Mahi'),
+('Rohit Sharma', 'Mumbai Indians', 'Batsman', 6500, 15, 16, 'Hitman'),
+('Jasprit Bumrah', 'Mumbai Indians', 'Bowler', 50, 165, 12, 'Boom Boom'),
+('Sachin Tendulkar', 'Mumbai Indians', 'Batsman', 5500, 5, 18, 'Little Master'),
+('Yuvraj Singh', 'Punjab Kings', 'All-rounder', 4000, 75, 14, 'Yuvi'),
+('Ravindra Jadeja', 'Chennai Super Kings', 'All-rounder', 3000, 160, 16, 'Sir Jadeja'),
+('KL Rahul', 'Lucknow Super Giants', 'Wicketkeeper Batsman', 4500, 1, 17, 'KL'),
+('Suryakumar Yadav', 'Mumbai Indians', 'Batsman', 3500, 1, 8, 'SKY'),
+('Hardik Pandya', 'Mumbai Indians', 'All-rounder', 2500, 60, 15, 'Kung Fu Pandya');
+
+SELECT * from ipl_players;
+
+SELECT name, nickname, team FROM ipl_players;
+
+-- Filtering
+
+SELECT * FROM ipl_players WHERE team = 'Mumbai Indians';
+
+SELECT name, nickname, auction_price_corores FROM ipl_players WHERE auction_price_corores > 10;
