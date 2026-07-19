@@ -176,3 +176,8 @@ page 1: (2-1) * 15 = 15 --offset
 page 1: (3-1) * 15 = 30 --offset
 page 1: (4-1) * 15 = 45 --offset
 
+-- Modify data in runtime 
+
+SELECT name, nickname, auction_price_corores, (auction_price_corores * 100) AS price_in_lakhs FROM ipl_players
+
+SELECT name, nickname, auction_price_corores, (auction_price_corores * 2 ) AS new_price FROM ipl_players
