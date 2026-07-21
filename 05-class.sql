@@ -67,3 +67,21 @@ SELECT
  
 FROM student AS s INNER JOIN internship AS i ON s.student_id = i.student_id
 
+
+--left join
+SELECT 
+ s.name,
+ s.branch,
+ i.stipend,
+ i.company_name
+ 
+FROM student AS s LEFT JOIN internship AS i ON i.student_id = s.student_id
+
+--right join
+SELECT 
+ s.name,
+ s.branch,
+ i.stipend,
+ i.company_name
+ 
+FROM student AS s RIGHT JOIN internship AS i ON i.student_id = s.student_id
