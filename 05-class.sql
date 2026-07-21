@@ -42,3 +42,28 @@ DELETE FROM internship
 SELECT * FROM internship
 
 TRUNCATE TABLE internship RESTART IDENTITY CASCADE; --If you want to reset the auto-increment counter (SERIAL) back to 1 as well, use TRUNCATE instead
+
+
+--inner join (if present in both table) with alias
+SELECT 
+ s.name,
+ s.branch,
+ i.company_name,
+ i.role,
+ i.stipend
+FROM student AS s INNER JOIN internship AS i ON s.student_id = i.student_id
+
+
+-- fetching all columns 
+SELECT 
+ s.*,
+ i.*
+ 
+FROM student AS s INNER JOIN internship AS i ON s.student_id = i.student_id
+
+SELECT 
+ s.*,
+ i.company_name
+ 
+FROM student AS s INNER JOIN internship AS i ON s.student_id = i.student_id
+
